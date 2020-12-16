@@ -1,0 +1,24 @@
+body {
+  width: 375px;
+}
+
+.hidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
