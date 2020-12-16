@@ -47,19 +47,19 @@
       <div class="row">
         <div class="column-full">
           <div class="search-container">
-            <form>
+            <form class="search-form">
               <label for="dish">Type of Dish:</label>
               <input id="dish" type="text" name="dish" required>
               <label class="diet-label" for="diet">Diet:</label>
               <select id="diet" name="diet">
-                <option value="any">Anything</option>
+                <option value="">Anything</option>
                 <option value="vegetarian">Vegetarian</option>
                 <option value="vegan">Vegan</option>
               </select>
               <div>
                 <label class="nutrition-label" for="nutrition">Nutrition:</label>
                 <select id="nutrition" name="nutrition">
-                  <option value="any">Anything</option>
+                  <option value="">Anything</option>
                   <option value="balanced">Balanced</option>
                   <option value="high-protein">High-protein</option>
                   <option value="low-fat">Low-fat</option>
@@ -71,6 +71,16 @@
               </div>
             </form>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="display hidden" data-view="recipe-list">
+      <div class="row">
+        <div class="column-full">
+          <nav>
+            <a href="#">View Favorites</a>
+            <div class="profile-name">Profile Name</div>
+          </nav>
         </div>
       </div>
     </section>
