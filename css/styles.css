@@ -1,0 +1,77 @@
+body {
+  background-color: #E8CD88;
+}
+
+h1 {
+  background-color: #666541;
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  background-color: #666541;
+  color: white;
+  text-align: center;
+  width: 250px;
+  height: 40px;
+  padding-top: 5px;
+}
+
+.head-container {
+  display: flex;
+  justify-content: center;
+}
+.profile-head {
+  background-color: #666541;
+}
+.button-container {
+  text-align: center;
+}
+
+.form-container {
+  margin: 20px 40px;
+}
+
+label {
+  font-weight: 700;
+}
+
+.submit-button {
+  margin-top: 10px;
+  float: right;
+  margin-right: 20px;
+}
+
+.search-container {
+  margin: 20px 40px;
+}
+
+.diet-label {
+  margin-left: 57px;
+}
+
+.nutrition-label {
+  margin-left: 21px;
+}
+select {
+  margin-top: 10px;
+}
+
+.search-button {
+  background-color: #666541;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  background-color: #666541;
+  color: white;
+}

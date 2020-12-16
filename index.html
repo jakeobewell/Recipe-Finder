@@ -12,6 +12,68 @@
   <header>
   </header>
   <main>
+    <section class="display" data-view="create-profile">
+      <div class="row">
+        <div class="column-full profile-head">
+          <h1 class="profile-button">CREATE A PROFILE</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-full">
+          <div class="form-container">
+            <form class="profile-form">
+              <label for="user-name">USERNAME:</label>
+              <input id="user-name" type="text" name="username" required>
+              <button class="submit-button" type="submit" value="submit">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="display hidden" data-view="search">
+      <div class="row">
+        <div class="column-full">
+          <nav>
+            <a href="#">View Favorites</a>
+            <div class="profile-name">Profile Name</div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-full head-container">
+          <h2>Search For A Recipe</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-full">
+          <div class="search-container">
+            <form>
+              <label for="dish">Type of Dish:</label>
+              <input id="dish" type="text" name="dish" required>
+              <label class="diet-label" for="diet">Diet:</label>
+              <select id="diet" name="diet">
+                <option value="any">Anything</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+              </select>
+              <div>
+                <label class="nutrition-label" for="nutrition">Nutrition:</label>
+                <select id="nutrition" name="nutrition">
+                  <option value="any">Anything</option>
+                  <option value="balanced">Balanced</option>
+                  <option value="high-protein">High-protein</option>
+                  <option value="low-fat">Low-fat</option>
+                  <option value="low-carb">Low-carb</option>
+                </select>
+              </div>
+              <div class="button-container">
+                <button type="submit" value="submit" class="search-button">Find Recipes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
