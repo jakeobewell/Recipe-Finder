@@ -17,6 +17,11 @@ h2 {
   padding-top: 5px;
 }
 
+h3 {
+  text-align: center;
+  font-size: 1rem;
+}
+
 .head-container {
   display: flex;
   justify-content: center;
@@ -74,4 +79,32 @@ a {
 nav {
   background-color: #666541;
   color: white;
+}
+
+img {
+  width: 100%;
+}
+
+.recipe-button,
+.favorite-button {
+  background-color: #666541;
+  color: white;
+}
+
+.column-half a {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.recipe-info {
+  position: relative;
+}
+
+.align {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+text-align: center;
 }

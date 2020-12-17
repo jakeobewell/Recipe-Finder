@@ -77,12 +77,17 @@
     <section class="display hidden" data-view="recipe-list">
       <div class="row">
         <div class="column-full">
-          <nav>
-            <a href="#">View Favorites</a>
+          <nav id="recipes-nav">
+            <a href="#" data-view="search">Search</a>
+            <a href="#" data-view="favorites">View Favorites</a>
             <div class="profile-name">Profile Name</div>
           </nav>
         </div>
       </div>
+      <div id="recipe-section">
+      </div>
+    </section>
+    <section class="display hidden" data-view="favorites">
     </section>
   </main>
   <script src="js/data.js"></script>
