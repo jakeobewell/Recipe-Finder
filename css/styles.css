@@ -1,5 +1,5 @@
 body {
-  background-color: #E8CD88;
+  background-color: #ffe39e;
 }
 
 h1 {
@@ -103,8 +103,16 @@ img {
 
 .align {
 position: absolute;
-bottom: 0;
+bottom: 40px;
 left: 0;
 right: 0;
 text-align: center;
+}
+
+.recipe-row {
+  border: solid white 3px;
+}
+
+.recipe-image {
+  border-radius: 20px;
 }
