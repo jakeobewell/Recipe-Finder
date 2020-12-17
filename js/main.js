@@ -110,12 +110,65 @@ $row.appendChild($columnTwo);
 return $row;
 }
 
-var $recipesNav = document.getElementById('recipes-nav');
+function renderFavorites(favoritesData) {
+  var $row = document.createElement('div');
+  $row.className = 'row recipe-row';
 
-$recipesNav.addEventListener('click', function(event) {
+  var $columnOne = document.createElement('div');
+  $columnOne.className = 'column-half';
 
-  if (event.target.tagName === "A") {
+  var $columnTwo = document.createElement('div');
+  $columnTwo.className = 'column-half recipe-info';
+
+  var $imageContainer = document.createElement('div');
+  $imageContainer.className = 'image-container';
+
+  var $image = document.createElement('img');
+  $image.className = 'recipe-image';
+  $image.setAttribute('src', favoritesData.image);
+
+  var $recipeName = document.createElement('h3');
+  $recipeName.className = 'recipe-title';
+  $recipeName.textContent = favoritesData.title;
+
+  var $div = document.createElement('div');
+  $div.className = 'align';
+
+  var $anchor = document.createElement('a');
+  $anchor.className = 'recipe-link';
+  $anchor.setAttribute('target', '_blank');
+  $anchor.setAttribute('href', favoritesData.link)
+
+  var $recipeButton = document.createElement('button');
+  $recipeButton.className = 'recipe-button';
+  $recipeButton.textContent = 'Go To Recipe!'
+
+  $anchor.appendChild($recipeButton);
+  $div.appendChild($anchor);
+  $columnTwo.appendChild($recipeName);
+  $columnTwo.appendChild($div);
+  $imageContainer.appendChild($image);
+  $columnOne.appendChild($imageContainer);
+  $row.appendChild($columnOne);
+  $row.appendChild($columnTwo);
+
+  return $row;
+}
+
+
+var $favoritesSection = document.getElementById('favorites-section');
+
+window.addEventListener('click', function(event) {
+
+  if (event.target.tagName === "A" && event.target.getAttribute('href') === '#') {
     changeView(event.target.getAttribute('data-view'));
+    if (event.target.getAttribute('data-view') === 'favorites') {
+      $recipeSection.innerHTML = '';
+      $favoritesSection.innerHTML = '';
+      for (var i = 0; i < currentData.favorites.length; i++) {
+        $favoritesSection.appendChild(renderFavorites(currentData.favorites[i]));
+      }
+    }
   }
   else {
     return;
