@@ -62,7 +62,7 @@ $searchForm.addEventListener('submit', function(event) {
 
 function renderRecipe(recipes) {
 var $row = document.createElement('div');
-$row.className = 'row';
+$row.className = 'row recipe-row';
 
 var $columnOne = document.createElement('div');
 $columnOne.className = 'column-half';
@@ -74,9 +74,11 @@ var $imageContainer = document.createElement('div');
 $imageContainer.className = 'image-container';
 
 var $image = document.createElement('img');
+$image.className = 'recipe-image';
 $image.setAttribute('src', recipes.recipe.image);
 
 var $recipeName = document.createElement('h3');
+$recipeName.className = 'recipe-title';
 $recipeName.textContent = recipes.recipe.label;
 
 var $div = document.createElement('div');
@@ -117,5 +119,27 @@ $recipesNav.addEventListener('click', function(event) {
   }
   else {
     return;
+  }
+})
+
+
+addEventListener('click', function(event) {
+  if (event.target.className === 'favorite-button' && event.target.textContent !== 'Favorited') {
+  var $recipeNames = document.querySelectorAll('.recipe-title');
+  var $recipeImage = document.querySelectorAll('.recipe-image');
+  var $recipeLink = document.querySelectorAll('.recipe-link');
+  var $favButtons = document.querySelectorAll('.favorite-button');
+  for (var i = 0; i < $favButtons.length; i++) {
+    if ($favButtons[i] === event.target) {
+      var favoritedRecipe = {};
+      favoritedRecipe.title = $recipeNames[i].textContent;
+      favoritedRecipe.image = $recipeImage[i].getAttribute('src');
+      favoritedRecipe.link = $recipeLink[i].getAttribute('href');
+      currentData.favorites.push(favoritedRecipe);
+      var favoritesDataJSON = JSON.stringify(currentData);
+      localStorage.setItem('project-local-storage', favoritesDataJSON);
+      $favButtons[i].textContent = 'Favorited';
+    }
+  }
   }
 })
