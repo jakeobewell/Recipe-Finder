@@ -86,7 +86,8 @@ img {
 }
 
 .recipe-button,
-.favorite-button {
+.favorite-button,
+.unfavorite-button {
   background-color: #666541;
   color: white;
 }
@@ -109,7 +110,8 @@ right: 0;
 text-align: center;
 }
 
-.recipe-row {
+.recipe-row,
+.favorites-row {
   border: solid white 3px;
 }
 

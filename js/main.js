@@ -1,7 +1,19 @@
 var $profileForm = document.querySelector('.profile-form');
-var $profileName = document.querySelector('.profile-name')
+var $profileName = document.querySelectorAll('.profile-name')
 var $searchForm = document.querySelector('.search-form');
 var $recipeSection = document.getElementById('recipe-section');
+
+function updateName() {
+if (currentData) {
+  for (var t = 0; t < $profileName.length; t++) {
+    $profileName[t].textContent = currentData.username;
+   }
+  }
+  else {
+    return;
+  }
+}
+updateName();
 
 $profileForm.addEventListener('submit', function(event) {
   data.username = document.getElementById('user-name').value;
@@ -9,9 +21,9 @@ $profileForm.addEventListener('submit', function(event) {
     event.preventDefault();
     return;
   }
-
-  $profileName.textContent = document.getElementById('user-name').value;
-
+  for (var y = 0; y < $profileName.length; y++) {
+  $profileName[y].textContent = document.getElementById('user-name').value;
+  }
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('project-local-storage', dataJSON);
   $profileForm.reset();
@@ -21,6 +33,14 @@ $profileForm.addEventListener('submit', function(event) {
 
 function changeView(view) {
   var $views = document.querySelectorAll('.display');
+
+  if (view === 'favorites') {
+    $recipeSection.innerHTML = '';
+    $favoritesSection.innerHTML = '';
+    for (var x = 0; x < currentData.favorites.length; x++) {
+      $favoritesSection.appendChild(renderFavorites(currentData.favorites[x]));
+    }
+  }
 
   for (var i = 0; i < $views.length; i++) {
     if ($views[i].getAttribute('data-view') === view) {
@@ -112,7 +132,7 @@ return $row;
 
 function renderFavorites(favoritesData) {
   var $row = document.createElement('div');
-  $row.className = 'row recipe-row';
+  $row.className = 'row favorites-row';
 
   var $columnOne = document.createElement('div');
   $columnOne.className = 'column-half';
@@ -143,8 +163,13 @@ function renderFavorites(favoritesData) {
   $recipeButton.className = 'recipe-button';
   $recipeButton.textContent = 'Go To Recipe!'
 
+  var $unfavoriteButton = document.createElement('button');
+  $unfavoriteButton.className = 'unfavorite-button';
+  $unfavoriteButton.textContent = 'Remove From Favorites';
+
   $anchor.appendChild($recipeButton);
   $div.appendChild($anchor);
+  $div.appendChild($unfavoriteButton);
   $columnTwo.appendChild($recipeName);
   $columnTwo.appendChild($div);
   $imageContainer.appendChild($image);
@@ -162,13 +187,6 @@ window.addEventListener('click', function(event) {
 
   if (event.target.tagName === "A" && event.target.getAttribute('href') === '#') {
     changeView(event.target.getAttribute('data-view'));
-    if (event.target.getAttribute('data-view') === 'favorites') {
-      $recipeSection.innerHTML = '';
-      $favoritesSection.innerHTML = '';
-      for (var i = 0; i < currentData.favorites.length; i++) {
-        $favoritesSection.appendChild(renderFavorites(currentData.favorites[i]));
-      }
-    }
   }
   else {
     return;
@@ -194,5 +212,21 @@ addEventListener('click', function(event) {
       $favButtons[i].textContent = 'Favorited';
     }
   }
+  }
+})
+
+
+addEventListener('click', function(event) {
+  var $unfavoriteButtons = document.querySelectorAll('.unfavorite-button');
+  var $favoritesRow = document.querySelectorAll('.favorites-row');
+  if (event.target.className === 'unfavorite-button') {
+    for (var i = 0; i < $unfavoriteButtons.length; i++) {
+      if ($unfavoriteButtons[i] === event.target) {
+        currentData.favorites.splice(i, 1);
+        var newCurrentDataJSON = JSON.stringify(currentData);
+        localStorage.setItem('project-local-storage', newCurrentDataJSON);
+        changeView('favorites');
+      }
+    }
   }
 })
