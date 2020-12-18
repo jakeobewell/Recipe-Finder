@@ -1,20 +1,22 @@
 body {
-  background-color: #ffe39e;
+  background-color:  #91e4d6;
+  font-family: 'Nunito';
 }
 
 h1 {
-  background-color: #666541;
+  background-color: #006161;
   color: white;
   text-align: center;
 }
 
 h2 {
-  background-color: #666541;
+  background-color: #006161;
   color: white;
   text-align: center;
   width: 250px;
   height: 40px;
   padding-top: 5px;
+  border-radius: 5px;
 }
 
 h3 {
@@ -27,7 +29,7 @@ h3 {
   justify-content: center;
 }
 .profile-head {
-  background-color: #666541;
+  background-color:#006161;
 }
 .button-container {
   text-align: center;
@@ -63,12 +65,13 @@ select {
 }
 
 .search-button {
-  background-color: #666541;
+  background-color: #006161;
   width: 120px;
   height: 30px;
   border-radius: 5px;
   margin-top: 20px;
   color: white;
+  border-radius: 5px;
 }
 
 a {
@@ -77,7 +80,7 @@ a {
 }
 
 nav {
-  background-color: #666541;
+  background-color:  #006161;
   color: white;
 }
 
@@ -88,8 +91,9 @@ img {
 .recipe-button,
 .favorite-button,
 .unfavorite-button {
-  background-color: #666541;
+  background-color: #006161;
   color: white;
+  border-radius: 7px;
 }
 
 .column-half a {
