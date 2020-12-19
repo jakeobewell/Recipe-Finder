@@ -117,6 +117,14 @@ var $favoriteButton = document.createElement('button');
 $favoriteButton.className = 'favorite-button';
 $favoriteButton.textContent = 'Add To Favorites';
 
+for (var f = 0; f < currentData.favorites.length; f++) {
+  if (currentData.favorites[f].link === recipes.recipe.url) {
+    $favoriteButton.textContent = 'Favorited';
+  }
+}
+
+
+
 $anchor.appendChild($recipeButton);
 $div.appendChild($anchor);
 $div.appendChild($favoriteButton);
