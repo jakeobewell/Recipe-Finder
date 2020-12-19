@@ -1,22 +1,22 @@
 body {
-  background-color:  #91e4d6;
+  background-color:  #beffbee5;
   font-family: 'Nunito';
 }
 
 h1 {
-  background-color: #006161;
+  background-color: #5d805c;
   color: white;
   text-align: center;
 }
 
 h2 {
-  background-color: #006161;
+  background-color: #5d805c;
   color: white;
   text-align: center;
   width: 250px;
   height: 40px;
   padding-top: 5px;
-  border-radius: 5px;
+  border-radius: 16px;
 }
 
 h3 {
@@ -29,7 +29,7 @@ h3 {
   justify-content: center;
 }
 .profile-head {
-  background-color:#006161;
+  background-color:  #5d805c;
 }
 .button-container {
   text-align: center;
@@ -65,7 +65,7 @@ select {
 }
 
 .search-button {
-  background-color: #006161;
+  background-color:  #5d805c;
   width: 120px;
   height: 30px;
   border-radius: 5px;
@@ -80,8 +80,13 @@ a {
 }
 
 nav {
-  background-color:  #006161;
+  background-color:  #5d805c;
   color: white;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 img {
@@ -91,9 +96,12 @@ img {
 .recipe-button,
 .favorite-button,
 .unfavorite-button {
-  background-color: #006161;
+  background-color:  #5d805c;
   color: white;
-  border-radius: 7px;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+
 }
 
 .column-half a {
@@ -121,4 +129,8 @@ text-align: center;
 
 .recipe-image {
   border-radius: 20px;
+}
+
+button {
+  border: none;
 }
