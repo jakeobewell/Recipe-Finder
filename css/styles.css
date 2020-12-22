@@ -54,11 +54,11 @@ label {
 }
 
 .diet-label {
-  margin-left: 57px;
+  margin-left: 61px;
 }
 
 .nutrition-label {
-  margin-left: 21px;
+  margin-left: 25px;
 }
 select {
   margin-top: 10px;
@@ -101,7 +101,6 @@ img {
   border-radius: 4px;
   padding: 5px;
   margin-bottom: 5px;
-
 }
 
 .column-half a {
@@ -133,4 +132,9 @@ text-align: center;
 
 button {
   border: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
 }

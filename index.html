@@ -48,30 +48,34 @@
       </div>
       <div class="row">
         <div class="column-full">
-          <div class="search-container">
-            <form class="search-form">
-              <label for="dish">Type of Dish:</label>
-              <input id="dish" type="text" name="dish" required>
-              <label class="diet-label" for="diet">Diet:</label>
-              <select id="diet" name="diet">
-                <option value="">Anything</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="vegan">Vegan</option>
-              </select>
-              <div>
-                <label class="nutrition-label" for="nutrition">Nutrition:</label>
-                <select id="nutrition" name="nutrition">
-                  <option value="">Anything</option>
-                  <option value="balanced">Balanced</option>
-                  <option value="high-protein">High-protein</option>
-                  <option value="low-fat">Low-fat</option>
-                  <option value="low-carb">Low-carb</option>
-                </select>
-              </div>
-              <div class="button-container">
-                <button type="submit" value="submit" class="search-button">Find Recipes</button>
-              </div>
-            </form>
+          <div class="flex">
+            <div class="search-container">
+              <form class="search-form">
+                <label for="dish">Type of Dish:</label>
+                <input id="dish" type="text" name="dish" required>
+                <div>
+                  <label class="diet-label" for="diet">Diet:</label>
+                  <select id="diet" name="diet">
+                    <option value="">Anything</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="nutrition-label" for="nutrition">Nutrition:</label>
+                  <select id="nutrition" name="nutrition">
+                    <option value="">Anything</option>
+                    <option value="balanced">Balanced</option>
+                    <option value="high-protein">High-protein</option>
+                    <option value="low-fat">Low-fat</option>
+                    <option value="low-carb">Low-carb</option>
+                  </select>
+                </div>
+                <div class="button-container">
+                  <button type="submit" value="submit" class="search-button">Find Recipes</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
