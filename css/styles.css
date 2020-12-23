@@ -46,6 +46,9 @@ label {
 .submit-button {
   margin-top: 10px;
   margin-right: 20px;
+  background-color:  #5d805c;
+  color: white;
+  padding: 5px;
 }
 
 .search-container {
@@ -86,6 +89,12 @@ nav {
   margin-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
+}
+nav a {
+  transition: 1s;
+}
+nav a:hover {
+  transform: scale(1.5, 1.5);
 }
 
 img {
