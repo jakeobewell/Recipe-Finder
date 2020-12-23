@@ -1,4 +1,4 @@
-# Reciepe-Finder
+# Recipe-Finder
 
 A solo project single page application that uses AJAX to request data from an API. The user can enter search parameters for cooking recipes and recieve a list of recipes that can be favorited for later use. 
 
