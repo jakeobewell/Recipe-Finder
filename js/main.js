@@ -41,6 +41,7 @@ function changeView(view) {
     $recipeSection.innerHTML = '';
     $favoritesSection.innerHTML = '';
     $emptyMessage.innerHTML = '';
+
     for (var x = 0; x < currentData.favorites.length; x++) {
       $favoritesSection.appendChild(renderFavorites(currentData.favorites[x]));
     }
@@ -66,6 +67,7 @@ $searchForm.addEventListener('submit', function(event) {
   var diet = document.getElementById('diet').value;
   var nutrition = document.getElementById('nutrition').value;
   $noDataMessage.innerHTML = '';
+
   if (diet !== "") {
     diet = '&health=' + document.getElementById('diet').value;
   }
@@ -135,10 +137,8 @@ $favoriteButton.textContent = 'Add To Favorites';
 for (var f = 0; f < currentData.favorites.length; f++) {
   if (currentData.favorites[f].link === recipes.recipe.url) {
     $favoriteButton.textContent = 'Favorited';
-  }
-}
-
-
+   }
+ }
 
 $anchor.appendChild($recipeButton);
 $div.appendChild($anchor);
@@ -216,13 +216,13 @@ window.addEventListener('click', function(event) {
   }
 })
 
-
 addEventListener('click', function(event) {
   if (event.target.className === 'favorite-button' && event.target.textContent !== 'Favorited') {
   var $recipeNames = document.querySelectorAll('.recipe-title');
   var $recipeImage = document.querySelectorAll('.recipe-image');
   var $recipeLink = document.querySelectorAll('.recipe-link');
   var $favButtons = document.querySelectorAll('.favorite-button');
+
   for (var i = 0; i < $favButtons.length; i++) {
     if ($favButtons[i] === event.target) {
       var favoritedRecipe = {};
@@ -238,10 +238,10 @@ addEventListener('click', function(event) {
   }
 })
 
-
 addEventListener('click', function(event) {
   var $unfavoriteButtons = document.querySelectorAll('.unfavorite-button');
   var $favoritesRow = document.querySelectorAll('.favorites-row');
+
   if (event.target.className === 'unfavorite-button') {
     for (var i = 0; i < $unfavoriteButtons.length; i++) {
       if ($unfavoriteButtons[i] === event.target) {
