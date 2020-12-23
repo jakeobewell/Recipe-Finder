@@ -26,6 +26,9 @@ nav {
   .submit-button {
     float: right;
   }
+  h3 {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 667px) {
@@ -45,7 +48,7 @@ text-align: center;
   font-size: 1rem;
 }
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .image-container {

@@ -1,5 +1,5 @@
 body {
-  background-color:  #beffbee5;
+  background-color:  #c4e0c4;
   font-family: 'Nunito';
 }
 
@@ -21,7 +21,6 @@ h2 {
 
 h3 {
   text-align: center;
-  font-size: 1rem;
 }
 
 .head-container {
@@ -52,7 +51,7 @@ label {
 }
 
 .search-container {
-  margin: 20px 40px;
+  margin: 20px 0;
 }
 
 .diet-label {
