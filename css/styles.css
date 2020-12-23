@@ -81,6 +81,11 @@ a {
   color: white;
 }
 
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
 nav {
   background-color:  #5d805c;
   color: white;
