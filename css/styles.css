@@ -48,6 +48,7 @@ label {
   background-color:  #5d805c;
   color: white;
   padding: 5px;
+  border-radius: 4px;
 }
 
 .search-container {

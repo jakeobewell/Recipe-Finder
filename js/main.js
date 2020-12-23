@@ -2,6 +2,8 @@ var $profileForm = document.querySelector('.profile-form');
 var $profileName = document.querySelectorAll('.profile-name')
 var $searchForm = document.querySelector('.search-form');
 var $recipeSection = document.getElementById('recipe-section');
+var $emptyMessage = document.getElementById('empty-message');
+var $noDataMessage = document.getElementById('no-data');
 
 function updateName() {
   for (var t = 0; t < $profileName.length; t++) {
@@ -38,8 +40,14 @@ function changeView(view) {
   if (view === 'favorites') {
     $recipeSection.innerHTML = '';
     $favoritesSection.innerHTML = '';
+    $emptyMessage.innerHTML = '';
     for (var x = 0; x < currentData.favorites.length; x++) {
       $favoritesSection.appendChild(renderFavorites(currentData.favorites[x]));
+    }
+    if (currentData.favorites[0] === undefined) {
+      var $message = document.createElement('h3');
+      $message.textContent = 'Your Favorites Is Currently Empty';
+      $emptyMessage.appendChild($message);
     }
   }
 
@@ -57,6 +65,7 @@ $searchForm.addEventListener('submit', function(event) {
   var dish = document.getElementById('dish').value;
   var diet = document.getElementById('diet').value;
   var nutrition = document.getElementById('nutrition').value;
+  $noDataMessage.innerHTML = '';
   if (diet !== "") {
     diet = '&health=' + document.getElementById('diet').value;
   }
@@ -73,6 +82,11 @@ $searchForm.addEventListener('submit', function(event) {
     $recipeSection.innerHTML = '';
     for (var i = 0; i < recipeList.hits.length; i++) {
       $recipeSection.appendChild(renderRecipe(recipeList.hits[i]));
+    }
+    if ($recipeSection.innerHTML === '') {
+      var $noData = document.createElement('h3');
+      $noData.textContent = 'Sorry, There Is No Data For This Entry';
+      $noDataMessage.appendChild($noData);
     }
   });
   xhr.send();
