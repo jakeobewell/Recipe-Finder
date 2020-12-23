@@ -1,5 +1,5 @@
 body {
-  background-color:  #beffbee5;
+  background-color:  #c4e0c4;
   font-family: 'Nunito';
 }
 
@@ -21,7 +21,6 @@ h2 {
 
 h3 {
   text-align: center;
-  font-size: 1rem;
 }
 
 .head-container {
@@ -46,10 +45,13 @@ label {
 .submit-button {
   margin-top: 10px;
   margin-right: 20px;
+  background-color:  #5d805c;
+  color: white;
+  padding: 5px;
 }
 
 .search-container {
-  margin: 20px 40px;
+  margin: 20px 0;
 }
 
 .diet-label {
@@ -86,6 +88,12 @@ nav {
   margin-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
+}
+nav a {
+  transition: 1s;
+}
+nav a:hover {
+  transform: scale(1.5, 1.5);
 }
 
 img {

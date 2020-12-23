@@ -4,14 +4,14 @@ var $searchForm = document.querySelector('.search-form');
 var $recipeSection = document.getElementById('recipe-section');
 
 function updateName() {
-if (currentData) {
   for (var t = 0; t < $profileName.length; t++) {
     $profileName[t].textContent = currentData.username;
    }
-  }
-  else {
-    return;
-  }
+}
+
+if (currentData.username !== undefined) {
+  updateName();
+  changeView('search');
 }
 
 $profileForm.addEventListener('submit', function(event) {
