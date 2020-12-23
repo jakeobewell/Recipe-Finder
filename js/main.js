@@ -13,7 +13,6 @@ if (currentData) {
     return;
   }
 }
-updateName();
 
 $profileForm.addEventListener('submit', function(event) {
   data.username = document.getElementById('user-name').value;
@@ -27,6 +26,8 @@ $profileForm.addEventListener('submit', function(event) {
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('project-local-storage', dataJSON);
   $profileForm.reset();
+  currentData = JSON.parse(localStorage.getItem('project-local-storage'));
+  updateName();
   changeView('search');
   event.preventDefault();
 })
