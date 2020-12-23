@@ -22,10 +22,14 @@ nav {
   align-items: center;
 }
 
+@media screen and (max-width: 666px) {
+  .submit-button {
+    float: right;
+  }
+}
+
 @media screen and (min-width: 667px) {
   .submit-button {
-  margin-top: 10px;
-  margin-right: 20px;
   float: none;
 }
 .align {
