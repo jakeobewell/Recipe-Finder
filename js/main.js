@@ -16,7 +16,7 @@ if (currentData.username !== undefined) {
   changeView('search');
 }
 
-$profileForm.addEventListener('submit', (event) =>{
+$profileForm.addEventListener('submit', function (event) {
   data.username = document.getElementById('user-name').value;
   if (data.username === '') {
     event.preventDefault();
@@ -34,8 +34,8 @@ $profileForm.addEventListener('submit', (event) =>{
   event.preventDefault();
 })
 
-const changeView = (view) => {
-  var $views = document.querySelectorAll('.display');
+function changeView(view) {
+  let $views = document.querySelectorAll('.display');
 
   if (view === 'favorites') {
     $recipeSection.innerHTML = '';
@@ -79,7 +79,7 @@ $searchForm.addEventListener('submit', function(event) {
 
   xhr.open('GET', _url)
   xhr.responseType = 'json';
-  xhr.addEventListener('load', () => {
+  xhr.addEventListener('load', function() {
     let recipeList = xhr.response;
     $recipeSection.innerHTML = '';
     for (let i = 0; i < recipeList.hits.length; i++) {
@@ -97,7 +97,7 @@ $searchForm.addEventListener('submit', function(event) {
   event.preventDefault();
 })
 
-const renderRecipe = (recipes) => {
+function renderRecipe(recipes)  {
 let $row = document.createElement('div');
 $row.className = 'row recipe-row';
 
