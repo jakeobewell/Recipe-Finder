@@ -15,7 +15,9 @@
 .column-half {
   flex-basis: 50%;
 }
-
+.nav {
+  align-items: center;
+}
 nav {
   display: flex;
   justify-content: space-evenly;

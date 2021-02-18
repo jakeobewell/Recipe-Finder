@@ -1,6 +1,5 @@
 /* exported data */
 let data = {
-  username: '',
   favorites: []
 }
 

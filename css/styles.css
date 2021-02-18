@@ -86,7 +86,11 @@ button:hover {
   cursor: pointer;
 }
 
-nav {
+.main-title {
+  text-align: center;
+  font-size: 1.5em;
+}
+.nav {
   background-color:  #5d805c;
   color: white;
   height: 50px;
@@ -150,4 +154,8 @@ button {
 .flex {
   display: flex;
   justify-content: center;
+}
+
+nav .nav-anchor {
+  margin-bottom: 0;
 }
