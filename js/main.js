@@ -1,38 +1,7 @@
-let $profileForm = document.querySelector('.profile-form');
-let $profileName = document.querySelectorAll('.profile-name')
 let $searchForm = document.querySelector('.search-form');
 let $recipeSection = document.getElementById('recipe-section');
 let $emptyMessage = document.getElementById('empty-message');
 let $noDataMessage = document.getElementById('no-data');
-
- const updateName = () => {
-  for (var t = 0; t < $profileName.length; t++) {
-    $profileName[t].textContent = currentData.username;
-   }
-}
-
-if (currentData.username !== undefined) {
-  updateName();
-  changeView('search');
-}
-
-$profileForm.addEventListener('submit', function (event) {
-  data.username = document.getElementById('user-name').value;
-  if (data.username === '') {
-    event.preventDefault();
-    return;
-  }
-  for (let y = 0; y < $profileName.length; y++) {
-  $profileName[y].textContent = document.getElementById('user-name').value;
-  }
-  let dataJSON = JSON.stringify(data);
-  localStorage.setItem('project-local-storage', dataJSON);
-  $profileForm.reset();
-  currentData = JSON.parse(localStorage.getItem('project-local-storage'));
-  updateName();
-  changeView('search');
-  event.preventDefault();
-})
 
 function changeView(view) {
   let $views = document.querySelectorAll('.display');
@@ -207,7 +176,6 @@ const renderFavorites = (favoritesData) => {
 let $favoritesSection = document.getElementById('favorites-section');
 
 window.addEventListener('click', (event) => {
-
   if (event.target.tagName === "A" && event.target.getAttribute('href') === '#') {
     changeView(event.target.getAttribute('data-view'));
   }
